@@ -65,7 +65,7 @@ while run:
     #BALL MOVEMENT CONTROLS
     if ball_y <= 0 + radius or ball_y >= HEIGHT - radius:
         ball_vel_y *= -1
-        pygame.mixer.Sound("pong/sound assets/pongbassplip.mp3").play()
+        pygame.mixer.Sound("sound assets/pongbassplip.mp3").play()
         #hit top/bottom
 
     if ball_x >= WIDTH - radius: #right side
@@ -89,7 +89,7 @@ while run:
                 ball_vel_y, ball_vel_x = 0.2, 0.4
 
         ball_vel_x *= -1
-        pygame.mixer.Sound("pong/sound assets/gameover.mp3").play()
+        pygame.mixer.Sound("sound assets/gameover.mp3").play()
         left_score += 1
 
 
@@ -112,7 +112,7 @@ while run:
                 ball_vel_y, ball_vel_x = 0.2, 0.2
             if ang == 2:
                 ball_vel_y, ball_vel_x = 0.2, 0.4
-        pygame.mixer.Sound("pong/sound assets/gameover.mp3").play()
+        pygame.mixer.Sound("sound assets/gameover.mp3").play()
         right_score += 1
 
     #paddle movement controls
@@ -131,14 +131,14 @@ while run:
         if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
             ball_x = left_paddle_x + paddle_width
             ball_vel_x *= -1
-            pygame.mixer.Sound("pong/sound assets/pongblip.mp3").play()
+            pygame.mixer.Sound("sound assets/pongblip.mp3").play()
 
     #right paddle
     if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
         if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
             ball_x = right_paddle_x
             ball_vel_x *= -1
-            pygame.mixer.Sound("pong/sound assets/pongblip.mp3").play()
+            pygame.mixer.Sound("sound assets/pongblip.mp3").play()
 
     #MOVEMENTS
     ball_x += ball_vel_x
